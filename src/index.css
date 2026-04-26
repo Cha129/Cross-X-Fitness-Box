@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@400;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Outfit", sans-serif;
+  
+  --color-cx-black: #000000;
+  --color-cx-bg: #0B0B0B;
+  --color-cx-card: #1A1A1A;
+  --color-cx-red: #FF2E2E;
+  --color-cx-gold: #FFD700;
+  --color-cx-grey: #CCCCCC;
+}
+
+@layer base {
+  body {
+    @apply bg-cx-bg text-white font-sans antialiased selection:bg-cx-red selection:text-white;
+  }
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+.text-glow-red {
+  text-shadow: 0 0 10px rgba(255, 46, 46, 0.5);
+}
+
+.glow-red {
+  box-shadow: 0 0 20px rgba(255, 46, 46, 0.3);
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+@keyframes pulse-red {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-red {
+  animation: pulse-red 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
