@@ -547,7 +547,7 @@ const Pricing = () => {
               onClick={() => setActiveTab('premium')}
               className={`px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest transition-all ${activeTab === 'premium' ? 'bg-cx-red text-white shadow-lg shadow-cx-red/20' : 'text-cx-grey hover:text-white'}`}
             >
-              Premium (w/ PT)
+              Personal Training
             </button>
           </div>
         </div>
