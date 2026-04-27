@@ -1,45 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@400;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --font-heading: "Outfit", sans-serif;
-  
+
+  /* Shadcn UI Colors (Mapped to Tailwind v4) */
+  --color-background: oklch(0% 0 0);
+  --color-foreground: oklch(100% 0 0);
+  --color-primary: oklch(62.8% 0.25 15.3); /* #FF2E2E approx */
+  --color-primary-foreground: oklch(100% 0 0);
+  --color-secondary: oklch(86.5% 0.18 95);  /* #FFD700 approx */
+  --color-secondary-foreground: oklch(0% 0 0);
+  --color-accent: oklch(62.8% 0.25 15.3);
+  --color-accent-foreground: oklch(100% 0 0);
+  --color-muted: oklch(85% 0 0);
+  --color-muted-foreground: oklch(25% 0 0);
+  --color-card: oklch(15% 0 0);
+  --color-card-foreground: oklch(100% 0 0);
+  --color-popover: oklch(15% 0 0);
+  --color-popover-foreground: oklch(100% 0 0);
+  --color-border: oklch(25% 0 0);
+  --color-input: oklch(25% 0 0);
+  --color-ring: oklch(86.5% 0.18 95);
+
+  --radius-lg: 12px;
+  --radius-md: 10px;
+  --radius-sm: 8px;
+
+  /* Custom Cross X Fitness Colors */
   --color-cx-black: #000000;
-  --color-cx-bg: #0B0B0B;
-  --color-cx-card: #1A1A1A;
   --color-cx-red: #FF2E2E;
-  --color-cx-gold: #FFD700;
-  --color-cx-grey: #CCCCCC;
+  --color-cx-yellow: #FFD700;
+  --color-cx-dark-grey: #1A1A1A;
+  --color-cx-light-grey: #CCCCCC;
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
   body {
-    @apply bg-cx-bg text-white font-sans antialiased selection:bg-cx-red selection:text-white;
+    @apply bg-cx-black text-white font-sans antialiased overflow-x-hidden;
+    line-height: 1.625;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight text-balance;
+    line-height: 1.2;
   }
 }
 
-.glass {
-  @apply bg-white/5 backdrop-blur-md border border-white/10;
+@layer components {
+  .section-header {
+    @apply text-4xl font-bold uppercase text-white tracking-widest mb-4 text-center;
+  }
+  
+  .section-subtitle {
+    @apply text-base text-cx-light-grey text-center mb-8 max-w-2xl mx-auto;
+  }
+
+  .decorative-line {
+    @apply w-16 h-1 bg-cx-red mx-auto mb-12 rounded-full;
+  }
+
+  .premium-card {
+    @apply bg-cx-dark-grey rounded-xl p-8 shadow-2xl border-2 border-transparent transition-all duration-300 flex flex-col h-full relative;
+  }
+
+  .premium-card:hover {
+    @apply border-cx-red shadow-primary/20 -translate-y-3;
+  }
+
+  .trainer-card {
+    @apply bg-cx-dark-grey rounded-xl p-6 shadow-2xl border-2 border-transparent transition-all duration-300 flex flex-col h-full relative;
+  }
+
+  .trainer-card:hover {
+    @apply border-cx-red shadow-primary/20 -translate-y-2;
+  }
+
+  .icon-container {
+    @apply w-20 h-20 bg-cx-yellow rounded-xl flex items-center justify-center mb-6 text-black mx-auto;
+  }
 }
 
-.text-glow-red {
-  text-shadow: 0 0 10px rgba(255, 46, 46, 0.5);
+@keyframes neon-pulse {
+  0%, 100% { opacity: 0.3; transform: translate(25%, 25%) scale(1); }
+  50% { opacity: 0.6; transform: translate(25%, 25%) scale(1.1); }
 }
 
-.glow-red {
-  box-shadow: 0 0 20px rgba(255, 46, 46, 0.3);
+.animate-neon-pulse {
+  animation: neon-pulse 4s ease-in-out infinite;
 }
 
-.glow-gold {
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+.text-shadow-red {
+  text-shadow: 0 0 20px rgba(255, 46, 46, 0.4);
 }
 
-@keyframes pulse-red {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
-}
-
-.animate-pulse-red {
-  animation: pulse-red 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.text-shadow-white {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
