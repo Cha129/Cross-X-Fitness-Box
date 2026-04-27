@@ -2,9 +2,8 @@ import React from 'react';
 
 function StrengthSection() {
   const videos = [
-    'https://drive.google.com/file/d/1ZK2tWJuWpBtrT07uRMqALgnjp3lJHcOE/preview',
-    'https://drive.google.com/file/d/1Mmn1xmTUrLqtpLi1ITbXgfX2JdNwGdgg/preview',
-    'https://drive.google.com/file/d/1CsPg022Neh41v0JRiWLelTtk4UUfGZZZ/preview'
+    'https://drive.google.com/file/d/1CylihNrt8SjH3hxeW0mTnPrdu-iCxKjY/preview',
+    'https://drive.google.com/file/d/1uUVYc5a7L8xuo8iaifHLD3q-CYumzI0m/preview'
   ];
 
   return (
@@ -16,7 +15,7 @@ function StrengthSection() {
           Build foundational power and aesthetic physique with our structured strength training programs. Focus on compound movements and progressive overload.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {videos.map((url, idx) => (
             <div key={idx} className="aspect-video relative rounded-2xl overflow-hidden bg-black border border-[#333] shadow-2xl">
               <iframe 

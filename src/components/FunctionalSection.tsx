@@ -2,8 +2,9 @@ import React from 'react';
 
 function FunctionalSection() {
   const videos = [
-    'https://drive.google.com/file/d/1CylihNrt8SjH3hxeW0mTnPrdu-iCxKjY/preview',
-    'https://drive.google.com/file/d/1uUVYc5a7L8xuo8iaifHLD3q-CYumzI0m/preview'
+    'https://drive.google.com/file/d/1ZK2tWJuWpBtrT07uRMqALgnjp3lJHcOE/preview',
+    'https://drive.google.com/file/d/1Mmn1xmTUrLqtpLi1ITbXgfX2JdNwGdgg/preview',
+    'https://drive.google.com/file/d/1CsPg022Neh41v0JRiWLelTtk4UUfGZZZ/preview'
   ];
 
   return (
@@ -15,7 +16,7 @@ function FunctionalSection() {
           Improve your agility, balance, and explosive power. Our functional area is equipped for high-intensity training that prepares you for real-world movement.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {videos.map((url, idx) => (
             <div key={idx} className="aspect-video relative rounded-2xl overflow-hidden bg-black border border-[#333] shadow-2xl">
               <iframe 
